@@ -4,13 +4,13 @@
 
 ![IOAI 2025 logo](Chicken_Counting/figs/IOAI-Logo.png)
 
+[![Official Website](https://img.shields.io/badge/Official%20Website%20-blue)](https://ioai-official.org/) [![2025 Results](https://img.shields.io/badge/2025%20Results%20-white)](https://ioai-official.org/china-2025/results-2025/)
+
 ## Overview
 
 IOAI is the International Science Olympiad in Artificial Intelligence for high school students. Beyond the annual global competition week and academic/social programs, it connects regional Olympiads and supports national IOA communities worldwide.
 
 In IOAI 2025 (Beijing), the individual contest included 6 tasks across 2 days. The competition focused mainly on machine learning, computer vision, and natural language processing. The first 3 tasks in the first day of competition are extension to the take-home tasks except Task 2 Chicken Counting. In this repository, I will be going over my thought process and solutions for the IOAI 2025 at the time.
-
-
 
 ## Competition tasks
 

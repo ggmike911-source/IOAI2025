@@ -8,7 +8,7 @@
 
 IOAI is the International Science Olympiad in Artificial Intelligence for high school students. Beyond the annual global competition week and academic/social programs, it connects regional Olympiads and supports national IOA communities worldwide.
 
-In IOAI 2025 (Beijing), the individual contest included 6 tasks across 2 days. The competition focused mainly on machine learning, computer vision, and natural language processing.
+In IOAI 2025 (Beijing), the individual contest included 6 tasks across 2 days. The competition focused mainly on machine learning, computer vision, and natural language processing. The first 3 tasks in the first day of competition are extension to the take-home tasks except Task 2 Chicken Counting. In this repository, I will be going over my thought process and solutions for the IOAI 2025 at the time.
 
 
 
@@ -28,6 +28,21 @@ In IOAI 2025 (Beijing), the individual contest included 6 tasks across 2 days. T
 | Rank | Name | Radar | Chicken Counting | Concepts | Restroom | Antique | Pixel | Total | Medal |
 |:----:|:----:|:-----:|:----------------:|:--------:|:--------:|:-------:|:-----:|:-----:|:-----:|
 | 54 / 284 | Mike | 92.11 | 100.00 | 30.25 | 0.00 | 59.33 | 14.40 | 296.09 / 600 | Silver |
+
+## Folder Hiearachy
+
+IOAI2025/
+├── README.md
+├── Individual-Contest/
+│   ├── Radar/
+│   │   ├── README.md
+|   |   ├── my_solution.ipynb
+│   │   ├── solution.ipynb 
+│   │   └── baseline/
+│   └── Chicken_Counting/
+│       ├── README.md
+│       └── ...
+└── requirements.txt
 
 ## Notes
 

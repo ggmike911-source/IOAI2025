@@ -29,20 +29,23 @@ In IOAI 2025 (Beijing), the individual contest included 6 tasks across 2 days. T
 |:----:|:----:|:-----:|:----------------:|:--------:|:--------:|:-------:|:-----:|:-----:|:-----:|
 | 54 / 284 | Mike | 92.11 | 100.00 | 30.25 | 0.00 | 59.33 | 14.40 | 296.09 / 600 | Silver |
 
-## Folder Hiearachy
+## Folder hierarchy
 
+```text
 IOAI2025/
 ├── README.md
 ├── Individual-Contest/
 │   ├── Radar/
 │   │   ├── README.md
-|   |   ├── my_solution.ipynb
-│   │   ├── solution.ipynb 
+│   │   ├── my_solution.ipynb
+│   │   ├── solution.ipynb
 │   │   └── baseline/
 │   └── Chicken_Counting/
 │       ├── README.md
 │       └── ...
-└── requirements.txt
+├── requirements.txt
+└── ...
+```
 
 ## Notes
 

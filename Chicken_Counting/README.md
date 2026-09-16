@@ -46,7 +46,7 @@ This matches the required output dimensions while retaining the important spatia
 
 ## Thought Process
 
-At the competition, the initial approach was intentionally simple. The most direct way to improve model accuracy is typically to increase the depth of the network, increase the number of feature channels between layers, or tune hyperparameters. At the same time, the training runtime had to remain under 20 minutes, so the model could not be overly complex. There were only 100 training samples, which also made overfitting a significant concern for custom CNNs.
+At the competition, the initial approach was pretty simple. The most direct way to improve model accuracy is typically to increase the depth of the network, increase the number of feature channels between layers, or tune hyperparameters. At the same time, the training runtime had to remain under 20 minutes, so the model could not be overly complex. There were only 100 training samples, which also made overfitting a significant concern for custom CNNs.
 
 ### Initial Approach
 
@@ -147,16 +147,17 @@ for param in model.feature_extraction.layer1.parameters(): param.requires_grad =
 for param in model.feature_extraction.layer2.parameters(): param.requires_grad = False
 ```
 
-We also freeze the early layers in the model which benefits us in 2 ways.
-1. Faster computation time because less weights to update per epoch
+This method offers 2 main advantages.
+1. Faster computation time because fewer weights to update per epoch
 2. The layers can preserve their original weights
 
 ### Official Solution Comparison
 | Optimizer | Initial Learning Rate | Gamma | Weight Decay | Total Epochs | Batch Size | Train Time | Accuracy | Model |
 |:---------:|:---------------------:|:-----:|:------------:|:------------:|:----------:|:----------:|:--------:|:-----:|
-| Adam | 1e-4 (0.0001) | 0.99999 | 1e-4 (0.0001) | 20 | 8 | 16 minutes | 0.90587 | Official (UNet) |
-| Adam | 1e-4 (0.0001) | 0.9 | 5e-4 (0.0005) | 20 | 8 | 9 minutes | 0.91951 | Mine (ResNet50) |
+| Adam | 1e-4 (0.0001) | 0.99999 | 1e-4 (0.0001) | 20 | 8 | 16 minutes | 0.90587 | UNet (Official) |
+| Adam | 1e-4 (0.0001) | 0.9 | 5e-4 (0.0005) | 20 | 8 | 9 minutes | 0.91951 | ResNet50 (Mine) |
 ---
 
 ## Summary
 
+Overall, ResNet50 outperform custom CNNs in both computing time and accuracy despite giving up the pretrained weights given by the baseline. My solution saw a -44% decrease in computing time and a 1.5% increase in accuracy.

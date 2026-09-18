@@ -109,6 +109,8 @@ def forward(self, x):
 
 We do not need the last layer of the ResNet model because we do not need to do classification. We will also use ResNet50's weight instead of the weight given (base.pth). We first pass the image through the 4 layers of ResNet to do feature extraction and encode the image. Then we can build the decoder to decode the image and get our desired density map of size [1, 180, 320].
 
+The reason why ResNet50 can perform well despite not having the pretrained weights was due to it having 50 layers to capture complex features. In addition, the ImageNet pretrained weights help ResNet50 to easily be fine-tuned for custom image tasks with less data and training time. 
+
 ```python
 def __init__(self):
     super(ResNetDensityDecoder, self).__init__()
@@ -156,6 +158,11 @@ This method offers 2 main advantages.
 |:---------:|:---------------------:|:-----:|:------------:|:------------:|:----------:|:----------:|:--------:|:-----:|
 | Adam | 1e-4 (0.0001) | 0.99999 | 1e-4 (0.0001) | 20 | 8 | 16 minutes | 0.90587 | UNet (Official) |
 | Adam | 1e-4 (0.0001) | 0.9 | 5e-4 (0.0005) | 20 | 8 | 9 minutes | 0.91951 | ResNet50 (Mine) |
+
+The solution used the pretrained weights for the encoder and implement the UNet architecture as the decoder. Since ResNet uses bottleneck blocks that can reduce the number of parameters and channels, ResNet can be very accurate and very efficient. 
+
+I also think it is worth noting that the baseline's and the solution's Gamma is set to 0.99999. Gamma in another word is learning rate decay, the higher the Gamma the slower the learning rate decay. Therefore, both the baseline's and the solution's learning rate decay is so insignificant that it is effectively zero. 
+
 ---
 
 ## Summary

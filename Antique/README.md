@@ -68,6 +68,12 @@ Spectral clustering is the method used in the official solution. Looking at the 
 
 The reason why spectral clustering is good at capturing complex patterns like spirals is that it groups data based on graph structure and local connectivity instead of simple geometric distances.
 
+#### Official Solution
+
+| Model | Handle for unknown samples | Score (Average) |
+|:-----:|:--------------------------:|:---------------:|
+| SVC | Spectral Clustering | 0.98 |
+
 ### Label Spreading
 
 <img src="figs\Label_Spreading.png" width="500" alt="Label Spreading on feature 1 and feature 0">

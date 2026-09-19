@@ -4,8 +4,6 @@
 
 The objective of this task is to generate density maps for chicken images. The input image shape is [3, 720, 1280], meaning there are 3 RGB channels and the image resolution is 720 (height) x 1280 (width). The output density map is constrained to [1, 180, 320].
 
-> This task is a continuation of the take-home weather forecasting task, though it is not as closely related to the take-home task.
-
 ---
 
 ## Problem Setup

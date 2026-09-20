@@ -40,7 +40,7 @@ The baseline model achieves a strong background accuracy, but it performs poorly
 
 ## Thought Process
 
-This task is very similar to the take-home task 1 which is pretty much the same question except instead of just having 2 classes (background and target), this time we have 5 classes. My first instinct is to use UNet in this problem because it is specializied for pixel segmentation tasks due to its encoder and decoder architecture, and skip connections. In addition, I also used UNet for the take-home task 1 and have an accuracy with 0.90+ so UNet should also perform well here.
+This task is very similar to the take-home task 1 which is pretty much the same question except instead of just having 2 classes (background and target), this time we have 5 classes. My first instinct is to use U-Net in this problem because it is specializied for pixel segmentation tasks due to its encoder and decoder architecture, and skip connections. In addition, I also used U-Net for the take-home task 1 and have an accuracy with 0.90+ so U-Net should also perform well here.
 
 ### U-Net
 
@@ -122,6 +122,10 @@ class MyModel(nn.Module):
 The results show that the U-Net performs much better than the baseline at predicting non-background pixels, which leads to a substantially higher normalized score. This is exactly what we want for a segmentation task where foreground objects contribute much more to the final evaluation than background pixels.
 
 One of the challenge I struggled with is that the input resolution is [50, 181], which is not divisible by $2^n$ for the two downsampling stages in the encoder. To address this, we resize the feature maps during decoding with bilinear interpolation so the output can be restored back to the original spatial dimensions. The two `F.interpolate()` calls are therefore essential to preserving alignment between the decoder output and the input image.
+
+<img src="figs\U-Net.png" width="500" alt="U-Net architecture">
+
+I have made a U-Net architecture graphic to better demonstrate the model in this task. Every layer has 2 convolution blocks to increase/decrease the channels of the tensor. Then the tensor size will be reduced to half by using max-pooling ```2 x 2```. When we are upsampling the tensor because the size of the tensor was rounded down when downsampling, we have to resize the size of the tensor when decoding (highlighed in red). We use skip connection to combine the 2 tensors from downsampling and upsampling which helps the model capture spatial and edge details. We can apply a convolution block at the end with a kernel size of ```1 x 1``` to reduce the channel back to 1 for output.
 
 ## Summary
 

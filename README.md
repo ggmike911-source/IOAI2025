@@ -39,11 +39,10 @@ IOAI2025/
 │   │   ├── README.md
 │   │   ├── my_solution.ipynb
 │   │   ├── solution.ipynb
-│   │   └── baseline/
+│   │   └── baseline.ipynb
 │   └── Chicken_Counting/
 │       ├── README.md
 │       └── ...
-├── requirements.txt
 └── ...
 ```
 

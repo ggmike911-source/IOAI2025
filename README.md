@@ -50,3 +50,5 @@ IOAI2025/
 
 This repository documents my work, experiments, and solutions for the tasks I tackled during the competition. It is meant as a personal record of learning, problem-solving, and technical exploration in AI.
 I use Google Colab's T4 GPU to train all my models, therefore the runtime might differ depending on your gpu.
+
+Some of the material such as figures, photoes, baselines, solutions etc. come from the official IOAI 2025 Github repository. The link to the repository is <a href="https://github.com/IOAI-official/IOAI-2025">here</a>.

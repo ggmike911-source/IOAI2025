@@ -154,10 +154,10 @@ This method offers 2 main advantages.
 ### Official Solution Comparison
 | Optimizer | Initial Learning Rate | Gamma | Weight Decay | Total Epochs | Batch Size | Train Time | Accuracy | Model |
 |:---------:|:---------------------:|:-----:|:------------:|:------------:|:----------:|:----------:|:--------:|:-----:|
-| Adam | 1e-4 (0.0001) | 0.99999 | 1e-4 (0.0001) | 20 | 8 | 16 minutes | 0.90587 | UNet (Official) |
+| Adam | 1e-4 (0.0001) | 0.99999 | 1e-4 (0.0001) | 20 | 8 | 16 minutes | 0.90587 | U-Net (Official) |
 | Adam | 1e-4 (0.0001) | 0.9 | 5e-4 (0.0005) | 20 | 8 | 9 minutes | 0.91951 | ResNet50 (Mine) |
 
-The solution used the pretrained weights for the encoder and implement the UNet architecture as the decoder. Since ResNet uses bottleneck blocks that can reduce the number of parameters and channels, ResNet can be very accurate and very efficient. 
+The solution used the pretrained weights for the encoder and implement the U-Net architecture as the decoder. Since ResNet uses bottleneck blocks that can reduce the number of parameters and channels, ResNet can be very accurate and very efficient. If you want to learn more about U-Net, you can read my task 1 documentation where I explain more about U-Net architecture.
 
 I also think it is worth noting that the baseline's and the solution's Gamma is set to 0.99999. Gamma in another word is learning rate decay, the higher the Gamma the slower the learning rate decay. Therefore, both the baseline's and the solution's learning rate decay is so insignificant that it is effectively zero. 
 
